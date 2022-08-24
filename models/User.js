@@ -32,7 +32,14 @@ User.init({
         }
     }
 }, 
-{
-    
 
-})
+//Set boundries for the table
+{
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user'
+});
+
+//export file
+module.exports = User;
