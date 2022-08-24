@@ -4,6 +4,8 @@ const sequelize = require('../config/connection');
 
 //Create Comment class
 class Comment extends Model {}
+
+//blueprint for Comment class
 Comment.init({
     id: {
         type: Datatypes.INTEGER,
