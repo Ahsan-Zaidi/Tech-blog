@@ -1,5 +1,5 @@
 //pull required dependencies to create connection
-const { Model, Datatypes, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 //Create Comment class
@@ -8,12 +8,12 @@ class Comment extends Model {}
 //blueprint for Comment class
 Comment.init({
     id: {
-        type: Datatypes.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     comment_text: {
-        type: Datatypes.STRING,
+        type: DataTypes.STRING,
         validate: {
             len: [3]
         }

@@ -1,6 +1,6 @@
 //required dependencies
 const router = require('express').Router();
-const { Comment } = require('../../models/Comment');
+const Comment = require('../../models/Comment');
 const withAuth = require('../../utils/auth');
 
 //route to find all comments
