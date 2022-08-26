@@ -34,3 +34,18 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+//home login page route
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+});
+
+//route to the signup page
+router.get('/signup', (req, res) => {
+    res.render('signup');
+});
+
