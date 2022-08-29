@@ -1,3 +1,4 @@
+console.log("ere")
 async function loginFormHandler(event) {
     event.preventDefault();
 
