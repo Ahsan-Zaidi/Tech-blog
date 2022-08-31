@@ -1,15 +1,18 @@
-console.log("ere")
+const { use } = require("../controllers");
+
 async function loginFormHandler(event) {
     event.preventDefault();
 
     //variables attatched to id of class 
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
+    console.log ("usename"+username)
+    console.log ("password"+password)
 
     //if login info is correct Post the content onto the dashboar
     if (username && password) {
         const response = await fetch('/api/users/login', {
-            method: 'POST',
+            method: 'post',
             body: JSON.stringify({
                 username,
                 password
@@ -22,7 +25,7 @@ async function loginFormHandler(event) {
         if (response.ok) {
             document.location.replace('/dashboard/');
         } else {
-            alert(response.statusText);
+            console.log(response);
         }
     }
 }

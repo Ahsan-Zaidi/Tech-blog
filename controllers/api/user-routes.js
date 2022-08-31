@@ -96,6 +96,7 @@ router.post('/login', (req, res) => {
         }
     }).then(dbUserData => {
         if (!dbUserData) {
+            console.log("gerer")
             res.status(400).json({ message: 'No user found matching this id'});
             return;
         }
@@ -104,6 +105,8 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'Incorrect password' });
             return;
         }
+        console.log("i am at line 108")
+
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
