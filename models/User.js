@@ -2,14 +2,21 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+var salt = bcrypt.genSaltSync();
+
+
 
 //Create User class
 //model is only created once user information is verified
 class User extends Model {
-    checkPassword(loginPW) {
-        return bcrypt.compareSync(loginPW, this.password);
-    }
-}
+    
+    async checkPassword(loginPW) {  
+           return await bcrypt.compare(loginPW,this.password)      
+        
+        }
+       
+   }
+
 
 //Blueprint for User class
 User.init({

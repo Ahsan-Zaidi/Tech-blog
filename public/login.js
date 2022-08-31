@@ -1,4 +1,4 @@
-const { use } = require("../controllers");
+//const { use } = require("../controllers");
 
 async function loginFormHandler(event) {
     event.preventDefault();
@@ -6,8 +6,8 @@ async function loginFormHandler(event) {
     //variables attatched to id of class 
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
-    console.log ("usename"+username)
-    console.log ("password"+password)
+    console.log ("username: "+ username)
+    console.log ("password: "+ password)
 
     //if login info is correct Post the content onto the dashboar
     if (username && password) {
@@ -23,8 +23,9 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard/');
+            document.location.replace('/dashboard');
         } else {
+            alert(response.statusText)
             console.log(response);
         }
     }
