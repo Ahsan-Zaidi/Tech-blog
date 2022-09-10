@@ -6,15 +6,22 @@ var salt = bcrypt.genSaltSync();
 
 
 
+
 //Create User class
 //model is only created once user information is verified
 class User extends Model {
     
     async checkPassword(loginPW) {  
-           return await bcrypt.compare(loginPW,this.password)      
-        
-        }
-       
+          // return await bcrypt.compare(loginPW,this.password)          
+             bcrypt.hash(loginPW, 10, function(err, hash) {
+          if (err) { throw (err); }
+
+        bcrypt.compare(loginPW, hash, function(err, result) {
+            if (err) { throw (err); }
+            console.log(result);
+        });
+        });
+}
    }
 
 
