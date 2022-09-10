@@ -28,7 +28,7 @@
 
 ✋ [GitHub Repository](https://github.com/Ahsan-Zaidi/Tech-blog)
 
-✋ [Deployed Application URL] ()
+✋ [Deployed Application URL] (https://tech-blog-96.herokuapp.com/)
 
 ![Screen Shot](./assets/images/Demo.jpg)
 
